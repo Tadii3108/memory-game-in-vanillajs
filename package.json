@@ -1,0 +1,19 @@
+{
+  "name": "memory-game-in-vanillajs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tadii3108/memory-game-in-vanillajs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tadii3108/memory-game-in-vanillajs/issues"
+  },
+  "homepage": "https://github.com/Tadii3108/memory-game-in-vanillajs#readme"
+}
