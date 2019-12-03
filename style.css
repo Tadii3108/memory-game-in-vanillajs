@@ -6,6 +6,7 @@
 
 body {
   height: 100vh;
+  display: flex;
   background-color: #22bb56;
 }
 
@@ -19,17 +20,28 @@ img {
 }
 
 .memory-game {
-  border: 2px solid #fff;
   width: 640px;
   height: 640px;
+  margin: auto;
   display: flex;
+  flex-wrap: wrap;
+  /*border: 2px solid #fff;*/
 }
 
 .card {
-  border: 2px solid #22fc56;
+  /*calc funtion allows us to subtract the margin value from the width and height.*/
+  width:calc(25% - 10px);
+  height:calc(25% - 10px);
+  margin: 2px;
+  position: relative;
 }
 
 .front-face,
 .back-face {
+  width: 100%;
+  height:100%;
+  padding: 5px;
+  position: absolute;
+  border-radius: 5px;
   border: 2px solid #12ddcd;
 }
