@@ -11,7 +11,7 @@ function enterName() {
   document.getElementById('username').innerHTML = text;
 };
 
-let count = 0;
+let count = 1;
 setInterval(() => {
   if (!pause) {
     document.getElementById('timer').innerHTML = '00:'+count;
@@ -29,6 +29,12 @@ const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+function change() {
+  var elem = document.getElementById("btn");
+  if (elem.value == "Start") elem.value = "Pause";
+  else elem.value = "Start";
+}
 
 function flipCard() {
   if(lockBoard) return;
@@ -95,3 +101,4 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
