@@ -3,87 +3,58 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+  
 body {
   height: 100vh;
-  /*display: flex;*/
-  background-color: #8C7051;
+  background-color: orange;
 }
 
 h1 {
-  text-align: center;
   font-size: 8vh;
+  text-align: center;
+  padding: 20px;
 }
-
+  
 .memory-game {
-  width: 440px;
-  height: 440px;
+  width: 540px;
+  height: 540px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid #fff;
   perspective: 1000px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
-
+  
 .card {
-  /*calc funtion allows us to subtract the margin value from the width and height.*/
-  width:calc(25% - 4px);
-  height:calc(25% - 8px);
-  margin: 2px;
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
-
+  
 .card:active {
-  transform: scale(.97);
+  transform: scale(0.97);
   transition: transform .2s;
 }
-
+  
 .card.flip {
   transform: rotateY(180deg);
 }
-
+  
 .front-face,
 .back-face {
   width: 100%;
-  height:100%;
-  padding: 5px;
+  height: 100%;
+  padding: 10px;
   position: absolute;
   border-radius: 5px;
+  background: #fff;
   backface-visibility: hidden;
 }
-
+  
 .front-face {
   transform: rotateY(180deg);
-}
-
-#btn {
-  background-color: #e7e7e7;
-  border: none;
-  color: black;
-  padding: 8px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin: auto;
-  width: 100px;
-}
-
-#btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-#username {
-  text-align: center;
-  margin: 10px;
-}
-
-#timer {
-  text-align: center;
-  margin: 20px;
 }

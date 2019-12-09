@@ -31,16 +31,35 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-  if(lockBoard) return;
-  if(this === firstCard) return;
-
   this.classList.add('flip');
 
   if(!hasFlippedCard) {
+    //first click
     hasFlippedCard = true;
     firstCard = this;
 
-    return;
+  } else {
+    //second click
+    hasFlippedCard = false;
+    secondCard = this;
+
+    if(firstCard.dataset.framework === secondCard.dataset.framework) {
+      //matched
+      firstCard.removeEventListener('click', flipCard);
+      secondCard.removeEventListener('click', flipCard);
+      count++;
+
+    } else {
+      //not matched
+      setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+      }, 1500);
+    }
+
+    if(count == 6) {
+      alert("Victory!");
+    }
   }
 
   secondCard = this;
@@ -51,18 +70,6 @@ function checkMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
   isMatch ? disableCards() : unflipCards();
-
-  /*if(firstCard.dataset.framework === secondCard.dataset.framework) {
-    return disableCards();
-  }
-    else {
-      unflipCards();
-    }*/
-};
-
-
-  //isMatch ? disableCards() : unflipCards();
-
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
