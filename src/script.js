@@ -57,8 +57,8 @@ function resetBoard() {
   });
 })();
 
-function victory() {
-  if()
-}
+//function victory() {
+//  if()
+//}
 
 cards.forEach(card => card.addEventListener('click', flipCard));
